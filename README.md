@@ -9,9 +9,9 @@ A simple Rack web app for querying and rendering data from the OpenWeatherMap AP
 
 2. Get an API key [here](https://home.openweathermap.org/api_keys)
 
-3. Clone rack-weather:
+3. Git clone rack-weather:
 
-   git clone git.github.com/wstevo4891/rack-weather.git
+   git clone https://github.com/wstevo4891/rack-weather.git
 
 4. Make an env.rb file at the root directory
 
