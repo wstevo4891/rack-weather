@@ -1,8 +1,10 @@
 # rack_weather.rb
 
 require 'hanami-router'
-require_relative 'api_request'
 require 'json'
+
+require_relative 'env'
+require_relative 'api_request'
 
 # Blog Class
 class RackWeather

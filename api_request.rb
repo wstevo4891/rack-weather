@@ -8,8 +8,10 @@ require 'json'
 # Service for processing API requests to OMDB
 #
 class ApiRequest
+  API_KEY = ENV['API_KEY']
+
   API_PATH = 'https://api.openweathermap.org/data/2.5'.freeze
-  API_TOKEN = '6467f54f0dee1c09f8a45c432ab677d2'.freeze
+
   HEADERS = {
     'Content-Type' => 'application/json'
   }.freeze
@@ -18,7 +20,7 @@ class ApiRequest
 
   def initialize
     @api_path = API_PATH
-    @api_key = API_TOKEN
+    @api_key = API_KEY
   end
 
   def get(query)
