@@ -15,9 +15,9 @@ A simple Rack web app for querying and rendering data from the OpenWeatherMap AP
 
 5. Define your API key in env.rb like so:
 
-   ```ruby```
+   ```ruby
    ENV['API_KEY] = 'your-api-key'
-   ```ruby```
+   ```
 
 6. Install the gems
 
