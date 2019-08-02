@@ -23,5 +23,9 @@ module Weather
     def query_url(params)
       "/weather?q=#{params[:city]},#{params[:country]}&APPID=#{API.api_key}"
     end
+
+    def render_layout(content = '')
+      self.body = LayoutCell.new(nil).() { content }
+    end
   end
 end
