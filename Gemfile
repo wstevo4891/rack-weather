@@ -10,5 +10,5 @@ gem 'rack-console'
 gem 'hanami-router'
 gem 'hanami-controller'
 
-# gem 'sequel'
-# gem 'pg'
+gem 'cells'
+gem 'cells-erb'

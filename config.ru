@@ -6,4 +6,7 @@ require_relative 'rack_weather'
 # Load Controllers
 Dir['./app/controllers/**/*.rb'].sort.each { |file| require file }
 
+# Load Cells
+Dir['./app/cells/**/*.rb'].sort.each { |file| require file }
+
 run RackWeather.router
