@@ -1,5 +1,8 @@
 # app\cells\weather_cell.rb
 
+require 'cell'
+require 'cell/erb'
+
 class WeatherCell < Cell::ViewModel
   include ::Cell::Erb
 

@@ -25,6 +25,8 @@ class RackWeather
       # end
 
       get '/weather/:city/:country', to: Weather::Show
+
+      get 'weather-data/:city/:country', to: Weather::Data
     end
   end
 

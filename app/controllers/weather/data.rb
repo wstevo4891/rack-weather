@@ -1,10 +1,11 @@
-# app\controllers\weather\show.rb
+# app\controllers\weather\data.rb
 
 require 'hanami/controller'
 require './app/services/api_request'
+require 'json'
 
 module Weather
-  class Show
+  class Data
     include ::Hanami::Action
 
     API = ApiRequest.new
@@ -14,17 +15,13 @@ module Weather
 
       data = API.get(query)
 
-      render_layout WeatherCell.new(data)
+      self.body = JSON.pretty_generate(data)
     end
 
     private
 
     def query_url(params)
       "/weather?q=#{params[:city]},#{params[:country]}&APPID=#{API.api_key}"
-    end
-
-    def render_layout(content = '')
-      self.body = LayoutCell.new(nil).() { content }
     end
   end
 end
