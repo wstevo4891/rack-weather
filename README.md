@@ -46,3 +46,9 @@ Examples:
 localhost:3000/weather/London/uk
 
 localhost:3000/weather-data/London/uk
+
+## Acknowledgements
+
+Many thanks to this great [Rack Tutorial](https://1devblog.org/article/framework-less-ruby-app-rack-based)
+
+Also to this [Sitepoint article](https://www.sitepoint.com/introduction-to-cells-a-better-view-layer-for-rails/) on using Trailblazer cells
