@@ -3,31 +3,28 @@
 require 'hanami-router'
 require 'json'
 
-require_relative 'env'
-require_relative 'api_request'
-
 # Blog Class
 class RackWeather
   HEADERS = {
     'Content-Type' => 'application/json; charset=utf-8'
   }.freeze
 
-  API = ApiRequest.new
-
   def self.router
     Hanami::Router.new do
       get '/', to: ->(env) { [200, {}, ['Welcome to Rack Weather']] }
 
-      get '/weather/:city/:country', to: ->(env) do
-        city = env['router.params'][:city]
-        country = env['router.params'][:country]
+      # get '/weather/:city/:country', to: ->(env) do
+      #   city = env['router.params'][:city]
+      #   country = env['router.params'][:country]
 
-        query = "/weather?q=#{city},#{country}&APPID=#{API.api_key}"
+      #   query = "/weather?q=#{city},#{country}&APPID=#{API.api_key}"
 
-        resp = API.get(query)
+      #   resp = API.get(query)
 
-        [200, {}, [JSON.pretty_generate(resp)]]
-      end
+      #   [200, {}, [JSON.pretty_generate(resp)]]
+      # end
+
+      get '/weather/:city/:country', to: Weather::Show
     end
   end
 
