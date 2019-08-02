@@ -6,6 +6,9 @@ require 'cell/erb'
 class WeatherCell < Cell::ViewModel
   include ::Cell::Erb
 
+  property :id
+  property :name
+  property :cod
   property :coord
   property :weather
   property :base
@@ -16,7 +19,8 @@ class WeatherCell < Cell::ViewModel
   property :dt
   property :sys
   property :timezone
-  property :id
-  property :name
-  property :cod
+
+  def show
+    render
+  end
 end

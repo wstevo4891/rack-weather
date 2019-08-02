@@ -2,6 +2,7 @@
 
 require 'hanami/controller'
 require './app/services/api_request'
+require 'ostruct'
 
 module Weather
   class Show
@@ -14,7 +15,7 @@ module Weather
 
       data = API.get(query)
 
-      render_layout WeatherCell.new(data)
+      render_layout WeatherCell.new(OpenStruct.new(data))
     end
 
     private
@@ -24,7 +25,7 @@ module Weather
     end
 
     def render_layout(content = '')
-      self.body = LayoutCell.new(nil).() { content }
+      self.body = LayoutCell.new(nil).show { content }
     end
   end
 end
